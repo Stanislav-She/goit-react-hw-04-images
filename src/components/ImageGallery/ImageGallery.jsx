@@ -5,6 +5,8 @@ import { ImageGalleryItem } from '../ImageGalleryItem/ImageGalleryItem';
 import { Button } from 'components/Button';
 import ImageGalleryStyle from './ImageGallery.module.css';
 import { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Status = {
   INIT: 'init',
@@ -53,6 +55,7 @@ export const ImageGallery = ({ value, onClick }) => {
 
   const handleLoadMore = () => {
     setPage(prevPage => prevPage + 1);
+    toast.success(`Uploaded more 12 images`);
   };
 
   return (
@@ -76,6 +79,7 @@ export const ImageGallery = ({ value, onClick }) => {
         </ul>
       )}
       {images.length >= 12 && <Button onClick={handleLoadMore} />}
+      <ToastContainer />
     </>
   );
 };
