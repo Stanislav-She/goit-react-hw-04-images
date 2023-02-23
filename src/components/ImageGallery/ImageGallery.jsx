@@ -6,7 +6,7 @@ import { Button } from 'components/Button';
 import ImageGalleryStyle from './ImageGallery.module.css';
 import { useEffect, useState } from 'react';
 
-const pageStatus = {
+const Status = {
   INIT: 'init',
   LOADING: 'loading',
   SUCCESS: 'success',
@@ -16,18 +16,18 @@ const pageStatus = {
 export const ImageGallery = ({ value, onClick }) => {
   const [page, setPage] = useState(1);
   const [images, setImages] = useState([]);
-  const [status, setStatus] = useState(pageStatus.INIT);
+  const [status, setStatus] = useState(Status.INIT);
 
   useEffect(() => {
-    setStatus(pageStatus.LOADING);
+    setStatus(Status.LOADING);
 
     async function getData() {
       try {
         const data = await getImage(value);
         setImages(data);
-        setStatus(pageStatus.SUCCESS);
+        setStatus(Status.SUCCESS);
       } catch {
-        setStatus(pageStatus.ERROR);
+        setStatus(Status.ERROR);
       }
     }
     getData();
@@ -57,13 +57,11 @@ export const ImageGallery = ({ value, onClick }) => {
 
   return (
     <>
-      {status === pageStatus.ERROR && <p>ERROR</p>}
+      {status === Status.ERROR && <p>ERROR</p>}
 
-      {(status === pageStatus.LOADING || status === pageStatus.INIT) && (
-        <Loader />
-      )}
+      {(status === Status.LOADING || status === Status.INIT) && <Loader />}
 
-      {status === pageStatus.SUCCESS && (
+      {status === Status.SUCCESS && (
         <ul className={ImageGalleryStyle.imageGallery}>
           {images?.map(item => {
             return (
