@@ -18,7 +18,7 @@ export const App = () => {
   };
 
   const handleSubmit = searchValue => {
-    setSearhValue({ searchValue });
+    setSearhValue(searchValue);
   };
 
   return (
