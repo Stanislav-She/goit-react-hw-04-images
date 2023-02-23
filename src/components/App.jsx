@@ -5,7 +5,7 @@ import { Modal } from './Modal/Modal';
 
 export const App = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const [searchValue, setSearhValue] = useState('wave');
+  const [searchValue, setSearhValue] = useState('doggy');
   const [currentImage, setCurrentImage] = useState(null);
 
   const toggleModal = event => {
