@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
 import { Loader } from '../Loader/Loader';
 import { getImage } from 'api/getDataImage';
 import { ImageGalleryItem } from '../ImageGalleryItem/ImageGalleryItem';
 import { Button } from 'components/Button';
 import ImageGalleryStyle from './ImageGallery.module.css';
-import { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

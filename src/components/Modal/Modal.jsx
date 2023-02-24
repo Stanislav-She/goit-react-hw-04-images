@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import ModalStyle from './Modal.module.css';
 import { useEffect } from 'react';
+import ModalStyle from './Modal.module.css';
 
 export const Modal = ({ onClose, currentImage }) => {
   useEffect(() => {

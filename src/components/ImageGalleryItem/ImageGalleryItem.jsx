@@ -1,5 +1,5 @@
-import ImageGalleryItemStyle from './ImageGalleryItem.module.css';
 import PropTypes from 'prop-types';
+import ImageGalleryItemStyle from './ImageGalleryItem.module.css';
 
 export const ImageGalleryItem = ({ url, onClick, bigImage }) => {
   return (
