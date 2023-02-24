@@ -1,7 +1,7 @@
+import { useState } from 'react';
 import SearchbarStyle from './Searchbar.module.css';
 import { FiSearch } from 'react-icons/fi';
 import { PropTypes } from 'prop-types';
-import { useState } from 'react';
 
 export const Searchbar = ({ onSubmit }) => {
   const [value, setValue] = useState('');
